@@ -65,7 +65,7 @@
 #include "contiki-net.h"
 
 #include "net/uip-debug.h"
-#include "net/uip-ds6.h"
+//#include "net/uip-ds6.h"
 
 #include <string.h> /* for memcpy() */
 #include <stdio.h> /* for printf() */
