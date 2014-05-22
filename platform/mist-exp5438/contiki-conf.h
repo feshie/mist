@@ -46,7 +46,7 @@
 #define NETSTACK_CONF_RDC_CHANNEL_CHECK_RATE 8
 #define NULLRDC_CONF_802154_AUTOACK 1
 #define NETSTACK_CONF_FRAMER  framer_802154
-#define NETSTACK_CONF_NETWORK sicslowpan_driver
+//#define NETSTACK_CONF_NETWORK sicslowpan_driver
 #ifndef CC2420_CONF_AUTOACK
 #define CC2420_CONF_AUTOACK              1
 #endif /* CC2420_CONF_AUTOACK */
@@ -215,7 +215,12 @@
 #endif /* SICSLOWPAN_CONF_MAX_MAC_TRANSMISSIONS */
 #else /* WITH_UIP6 */
 #define UIP_CONF_IP_FORWARD      1
+
+/*Guard to prevent warnings when using derivative platforms. */
+#ifndef UIP_CONF_BUFFER_SIZE 				
 #define UIP_CONF_BUFFER_SIZE     108
+#endif
+
 #endif /* WITH_UIP6 */
 
 #define UIP_CONF_ICMP_DEST_UNREACH 1
